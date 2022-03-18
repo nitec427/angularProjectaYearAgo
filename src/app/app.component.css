@@ -1,0 +1,5 @@
+input[type="text"] {
+    color: purple;
+    border-color: pink;
+    border-width: 20px;
+}

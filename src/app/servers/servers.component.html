@@ -1,0 +1,13 @@
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onMouseClick()">New Server</button>
+<!-- The usage of event binding and how to use it -->
+<p [innerHTML]="allowNewServer">
+  <!-- Rather than using STRING INTERPOLATION, do prefer element attributes and PROP. BINDING TO CHANGE THE CONTENT OF THE WEBSITE -->
+</p>
+<input type="text" (input)="onServerNameChange($event)" class="form-control">
+<!-- The code which is above just changes serverMessage content. It doesn't bind the data in two way. However, the code BELOW CHANGES the data in BOTH direction. -->
+<input type="text" [(ngModel)]="serverName" class="form-control">
+<p>{{serverName}}</p>
+<!-- <p [innerHTML]="serverMessage"></p> -->
+<p *ngIf="serverCreated">Server was created, server name is now {{serverName}}</p>
+
+<app-server *ngFor="let server of servers"></app-server>
